@@ -188,7 +188,7 @@ async function main() {
                     process.exit(1)
                 }
                 console.log(`USING SUPPLIED ARRAY OF ADDRESSES FROM ${current.pathToJsonArrayOfAddresses}`)
-                var snapshot = current.pathToJsonArrayOfAddresses
+                var snapshot = await readjson(current.pathToJsonArrayOfAddresses)
                 var tokensPeraccount = ((total * errorMargin) / (snapshot.length))
                 for (b in snapshot) {
                     var address = snapshot[b]
